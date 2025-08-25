@@ -90,3 +90,32 @@ tr:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.search-bar {
+    margin: 8px 0 16px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cpf-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cpf-eye {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cpf-eye:hover {
+    opacity: .8;
+    text-decoration: underline;
+}

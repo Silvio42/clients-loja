@@ -8,5 +8,6 @@ name TEXT NOT NULL,
 phone TEXT,
 email TEXT,
 notes TEXT,
+cpf TEXT UNIQUE,
 created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );

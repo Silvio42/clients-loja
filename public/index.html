@@ -1,58 +1,72 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cadastro de Clientes</title>
-<link rel="stylesheet" href="/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-<main class="container">
-<h1>Clientes da Loja</h1>
+  <main class="container">
+    <h1>Clientes da Loja</h1>
 
+    <form id="client-form">
+      <div class="grid">
+        <label>
+          <span>Nome *</span>
+          <input type="text" name="name" required />
+        </label>
 
-<form id="client-form">
-<div class="grid">
-<label>
-<span>Nome *</span>
-<input type="text" name="name" required />
-</label>
-<label>
-<span>Telefone</span>
-<input type="text" name="phone" placeholder="(xx) xxxxx-xxxx" />
-</label>
-<label>
-<span>E-mail</span>
-<input type="email" name="email" placeholder="cliente@exemplo.com" />
-</label>
-</div>
-<label>
-<span>Observações</span>
-<textarea name="notes" rows="3" placeholder="Anotações rápidas"></textarea>
-</label>
-<button type="submit">Adicionar cliente</button>
-</form>
+        <!-- CPF NOVO -->
+        <label>
+          <span>CPF</span>
+          <input type="text" name="cpf" placeholder="000.000.000-00" />
+        </label>
 
+        <label>
+          <span>Telefone</span>
+          <input type="text" name="phone" placeholder="(xx) xxxxx-xxxx" />
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="cliente@exemplo.com" />
+        </label>
+      </div>
+      <label>
+        <span>Observações</span>
+        <textarea name="notes" rows="3" placeholder="Anotações rápidas"></textarea>
+      </label>
+      <button type="submit">Adicionar cliente</button>
+    </form>
 
-<section>
-<h2>Lista</h2>
-<table id="clients-table">
-<thead>
-<tr>
-<th>Nome</th>
-<th>Telefone</th>
-<th>E-mail</th>
-<th>Observações</th>
-<th>Criado em</th>
-<th>Ações</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-</section>
-</main>
+    <!-- BUSCA NOVA -->
+    <div class="search-bar">
+      <input id="search" type="text" placeholder="Pesquisar por nome, e-mail ou CPF..." />
+    </div>
 
+    <section>
+      <h2>Lista</h2>
+      <table id="clients-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Observações</th>
+            <th>Criado em</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
 
-<script src="/app.js"></script>
+  <script src="/app.js"></script>
 </body>
+</html>
+
 </html>
