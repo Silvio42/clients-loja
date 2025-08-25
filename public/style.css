@@ -108,14 +108,29 @@ tr:hover {
     gap: 8px;
 }
 
+
+/* botão do olho */
 .cpf-eye {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    font-size: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 6px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+
+  /* AQUI está a correção principal: define o currentColor */
+  color: #555;              /* cor do olho */
 }
 
-.cpf-eye:hover {
-    opacity: .8;
-    text-decoration: underline;
+.cpf-eye:hover,
+.cpf-eye:focus {
+  color: #6c63ff;           /* muda a cor no hover/focus */
+  outline: none;
+}
+
+.cpf-eye svg {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
