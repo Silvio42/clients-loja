@@ -1,74 +1,26 @@
 <!doctype html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cadastro de Clientes</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Painel</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
-
 <body>
-  <main class="container">
-    <h1>Clientes da Loja</h1>
-
-    <form id="client-form">
-      <div class="grid">
-        <label>
-          <span>Nome *</span>
-          <input type="text" name="name" required />
-        </label>
-
-        <!-- CPF NOVO -->
-        <label>
-          <span>CPF</span>
-          <input type="text" name="cpf" placeholder="000.000.000-00" />
-        </label>
-
-        <label>
-          <span>Telefone</span>
-          <input type="text" name="phone" placeholder="(xx) xxxxx-xxxx" />
-        </label>
-        <label>
-          <span>E-mail</span>
-          <input type="email" name="email" placeholder="cliente@exemplo.com" />
-        </label>
-      </div>
-      <label>
-        <span>Observações</span>
-        <textarea name="notes" rows="3" placeholder="Anotações rápidas"></textarea>
-      </label>
-      <button type="submit">Adicionar cliente</button>
-    </form>
-
-    <!-- BUSCA NOVA -->
-    <div class="search-bar">
-      <input id="search" type="text" placeholder="Pesquisar por nome, e-mail ou CPF..." />
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <button class="brand" id="goHome" type="button">
+        <span class="brand__dot"></span>
+        <span class="brand__text">Painel</span>
+      </button>
+      <nav class="crumbs"><span id="crumb">Início</span></nav>
     </div>
+  </header>
 
-    <section>
-      <h2>Lista</h2>
-      <table id="clients-table">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Telefone</th>
-            <th>E-mail</th>
-            <th>Observações</th>
-            <th>Criado em</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </section>
+  <main class="wrap">
+    <section id="app"></section>
   </main>
 
   <script src="/app.js"></script>
 </body>
-</html>
-
 </html>

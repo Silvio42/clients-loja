@@ -1,13 +1,13 @@
 PRAGMA journal_mode = WAL;
 PRAGMA foreign_keys = ON;
 
-
 CREATE TABLE IF NOT EXISTS clients (
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-name TEXT NOT NULL,
-phone TEXT,
-email TEXT,
-notes TEXT,
-cpf TEXT UNIQUE,
-created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  phone TEXT,
+  email TEXT,
+  notes TEXT,
+  cpf TEXT UNIQUE,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  dataNascimento TEXT
 );
