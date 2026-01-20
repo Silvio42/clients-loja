@@ -28,22 +28,31 @@ try {
 app.get('/api/clients', (req, res) => {
   try {
     const q = (req.query.q || '').trim();
-    if (!q) return res.json([]); // não listar tudo ao abrir
+    if (!q) return res.json([]);
 
     const digits = q.replace(/\D/g, '');
-    const likeName = `%${q}%`;
-    const likeDigits = `%${digits}%`;
 
-    const stmt = db.prepare(`
-      SELECT * FROM clients
-      WHERE name LIKE ?
-         OR cpf  LIKE ?
-         OR phone LIKE ?
-      ORDER BY created_at DESC
-      LIMIT 200
-    `);
+    let rows;
+    if (digits) {
+      // se tem número, busca por nome OU cpf/telefone
+      rows = db.prepare(`
+        SELECT * FROM clients
+        WHERE name LIKE ?
+           OR cpf  LIKE ?
+           OR phone LIKE ?
+        ORDER BY created_at DESC
+        LIMIT 200
+      `).all(`%${q}%`, `%${digits}%`, `%${digits}%`);
+    } else {
+      // se não tem número, busca só por nome
+      rows = db.prepare(`
+        SELECT * FROM clients
+        WHERE name LIKE ?
+        ORDER BY created_at DESC
+        LIMIT 200
+      `).all(`%${q}%`);
+    }
 
-    const rows = stmt.all(likeName, likeDigits, likeDigits);
     res.json(rows);
   } catch (e) {
     res.status(500).json({ error: 'Erro ao buscar clientes', detail: String(e) });
