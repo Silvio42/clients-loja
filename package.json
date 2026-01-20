@@ -1,15 +1,26 @@
 {
-"name": "clientes-loja",
-"version": "1.0.0",
-"description": "Cadastro de clientes simples (Node + SQLite)",
-"main": "server.js",
-"scripts": {
-"start": "node server.js",
-"dev": "node server.js"
-},
-"dependencies": {
-"better-sqlite3": "^9.4.0",
-"cors": "^2.8.5",
-"express": "^4.19.2"
-}
+  "name": "clientes-loja",
+  "version": "1.0.0",
+  "description": "Cadastro de clientes simples (Node + SQLite)",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*",
+      "schema.sql"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0"
+  }
 }

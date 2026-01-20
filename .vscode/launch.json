@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Node (server.js)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server.js",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Debug Front (Chrome)",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/public"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Fullstack (Node + Chrome)",
+      "configurations": ["Debug Node (server.js)", "Debug Front (Chrome)"]
+    }
+  ]
+}
